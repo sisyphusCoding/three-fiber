@@ -1,12 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
+
 *{
 box-sizing: border-box;
+-webkit-touch-callout: none;
+-webkit-tap-highlight-color: transparent;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+color: #aaaaaa
 }
 
 
 html, body , #root {
-background: #DFDFDE;
+
+background: #B91646;
 padding: 0;
 width: 100%;
 height: 100%;
-margin: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-flow: column;
+min-height: 100vh;
+font-family: 'Maven Pro', sans-serif;
 }
+
+
+h1{
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 10vh;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 2rem;
+    position: absolute;
+    letter-spacing: .6vh;
+}
+
