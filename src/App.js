@@ -1,4 +1,4 @@
-import React , {useRef , Suspense} from 'react'
+import React , {useState,useRef , Suspense} from 'react'
 import {Canvas , extend , useFrame , useLoader} from '@react-three/fiber'
 import {shaderMaterial} from '@react-three/drei'
 import glsl from "babel-plugin-glsl/macro"
@@ -18,16 +18,13 @@ const WaveShaderMaterial = shaderMaterial (
 		
 		#pragma glslify: snoise3 = require(glsl-noise/simplex/3d)
 
-		
-
-		
 
 		void main () {
 		vUv = uv;
 
 		vec3 pos = position;
-		float noiseFreq = 1.5;
-		float noiseAmp = 0.3;
+		float noiseFreq = 2.5;
+		float noiseAmp = 0.4;
 		vec3 noisePos = vec3(pos.x * noiseFreq + uTime, pos.y , pos.z );
 		pos.z += snoise3(noisePos) * noiseAmp;
 		vWave = pos.z  ;
@@ -90,11 +87,15 @@ const Scene = () => {
 
 const App = () => {
 
+	
+
 	return (
 		<>
 			
-			<Scene/>
-			<h1>The Death of Socrates</h1>
+			<Scene />
+			
+					<h1>The Death of Socrates</h1>
+			
 		</>
 		   ) 
 }
